@@ -9,12 +9,10 @@ public:
             if(s[i]=='(') stk.push(i);
             else{
                 if(stk.size()==0 || s[stk.top()]==')') stk.push(i);
-                else if(s[stk.top()]=='('){
-                    stk.pop();
-                    int lastUnBalIdx=(stk.size()==0)?-1:stk.top();
-                    ans=max(ans,i-lastUnBalIdx);
-                }
+                else stk.pop();
             }
+            int lastUnBalIdx=(stk.size()==0)?-1:stk.top();
+            ans=max(ans,i-lastUnBalIdx);
         }
         
         return ans;
