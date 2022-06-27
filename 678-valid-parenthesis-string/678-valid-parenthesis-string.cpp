@@ -9,7 +9,7 @@ public:
             else if(s[i]=='*') star.push(i);
             else{
                 if(open.size()>0) open.pop();
-                else if(star.size()>0) star.pop();
+                else if(star.size()>0) star.pop();// convert * to "("
                 else return false;
             }
         }
