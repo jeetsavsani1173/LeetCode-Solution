@@ -11,13 +11,15 @@ public:
             mxFreq=max(mxFreq,it.second);
         }
         int ans=0;
+        int j=mxFreq-1;
         for(int i=mxFreq;i>=1;i--)
         {
             int size=vect[i].size();
             if(size<=1) continue;
             else{
                 size--;
-                for(int j=i-1;j>0;j--)
+                j=min(j,i-1);
+                for(;j>0;j--)
                 {
                     if(vect[j].size()==0)
                     {
