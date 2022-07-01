@@ -47,15 +47,6 @@ public:
                 }
             }
         }
-        // cout<<ans[0]<<" "<<ans[1]<<" "<<ans[2]<<" "<<ans[3]<<endl;
-        // cout<<endl;
-        // for(auto it:vmp)
-        // {
-        //     cout<<it.first<<"-> ";
-        //     for(auto it1:it.second)
-        //         cout<<it1<<" ";
-        //     cout<<endl;
-        // }
         return (int)ans[0];
     }
 };
