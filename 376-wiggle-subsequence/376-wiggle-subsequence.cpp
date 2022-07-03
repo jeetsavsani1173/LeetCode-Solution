@@ -25,11 +25,6 @@ public:
         int ans=0;
         for(auto it:dp1) ans=max(ans,it);
         for(auto it:dp2) ans=max(ans,it);
-        
-        // for(auto it:dp1) cout<<it<<" ";
-        // cout<<endl;
-        // for(auto it:dp2) cout<<it<<" ";
-        // cout<<endl;
         return ans;
     }
 };
