@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // house Robber-I code
     int helper(int idx,int n,vector<int> &nums,vector<int> &dp)
     {
         if(idx>=n) return 0;
