@@ -13,14 +13,7 @@ public:
             int c=dp[ptr5]*5;
             
             int mn=min(a,min(b,c));
-            
-            if(mn==a){
-                dp.push_back(dp[ptr2]*2);
-            }else if(mn==b){
-                dp.push_back(dp[ptr3]*3);
-            }else{
-                dp.push_back(dp[ptr5]*5);
-            }
+            dp.push_back(mn);
             
             if(mn==a) ptr2++;
             if(mn==b) ptr3++;
