@@ -11,7 +11,6 @@ public:
         {
             mp[s[j]]++;
             if(mp.size()<3){
-                // prev=i;
                 continue;
             }
             while(mp.size()==3)
@@ -26,9 +25,6 @@ public:
             }
             
             ans+=(i-prev)*(s.size()-j);
-            // cout<<"index "<<j<<"=> ";
-            // cout<<"i->"<<i<<" prev->"<<prev<<endl;
-            // cout<<ans<<endl;
             prev=i;
         }
         
