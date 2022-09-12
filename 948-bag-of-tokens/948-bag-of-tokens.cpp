@@ -6,11 +6,13 @@ public:
         int i=0,j=tokens.size()-1;
         int score=0;
         while(i<=j){
+            // take item if possible
             if(tokens[i]<=power){
                 score++;
                 power-=tokens[i];
                 i++;
-            }else{
+            }else{// leave item
+                // forn non-taking Oprtions.
                 if(score==0) return ans;
                 score--;
                 power+=tokens[j];
