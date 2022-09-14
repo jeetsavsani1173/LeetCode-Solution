@@ -36,10 +36,6 @@ public:
             count++;
             mp[root->val]++;
             if(isPalindrome(mp,count)) ans++;
-            // cout<<count<<"-> ";
-            // for(auto it:mp)
-            //     cout<<it.second<<" ";
-            // cout<<endl;
             mp[root->val]--;
             count--;
             return;
