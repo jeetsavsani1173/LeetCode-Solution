@@ -20,7 +20,6 @@ public:
         vector<int> nums;
         for(int i=1;i<=100;i++)
             nums.push_back(i*i);
-        reverse(nums.begin(),nums.end());
         vector<vector<int>> dp(nums.size()+1,vector<int>(n+1,-1));
         return helper(0,nums,n,dp);
     }
