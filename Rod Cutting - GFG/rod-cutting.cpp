@@ -12,21 +12,17 @@ class Solution{
   public:
     
     int cutRod(int price[], int n) {
-        vector<vector<int>> dp(n+1,vector<int>(n+1,0));
+        vector<int> dp(n+2,0);
         
         for(int i=1;i<=n;i++)
         {
             for(int j=1;j<=n;j++)
             {
-                // Take Choice
                 if(j>=i)
-                    dp[i][j]=max(dp[i][j],price[i-1]+dp[i][j-i]);
-                // Non_take Choice
-                dp[i][j]=max(dp[i][j],dp[i-1][j]);
+                    dp[j]=max(dp[j],price[i-1]+dp[j-i]);
             }
         }
-        
-        return dp[n][n];
+        return dp[n];
     }
 };
 
