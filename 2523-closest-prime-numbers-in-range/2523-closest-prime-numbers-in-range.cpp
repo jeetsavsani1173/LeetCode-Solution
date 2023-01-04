@@ -20,7 +20,6 @@ public:
             if(seive[i]){
                 primes.push_back(i);
             }
-        // if(primes.size()==0 || primes.size()==1) return {-1,-1};
         
         int mn=INT_MAX;
         
