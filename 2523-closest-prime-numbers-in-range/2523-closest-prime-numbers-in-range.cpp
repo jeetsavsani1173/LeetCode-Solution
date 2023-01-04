@@ -20,13 +20,13 @@ public:
             if(seive[i]){
                 primes.push_back(i);
             }
-        if(primes.size()==0 || primes.size()==1) return {-1,-1};
+        // if(primes.size()==0 || primes.size()==1) return {-1,-1};
         
         int mn=INT_MAX;
         
-        for(int i=0;i<primes.size()-1;i++)
+        for(int i=1;i<primes.size();i++)
         {
-            mn=min(mn,primes[i+1]-primes[i]);
+            mn=min(mn,primes[i]-primes[i-1]);
         }
         
         if(mn==INT_MAX) return {-1,-1};
