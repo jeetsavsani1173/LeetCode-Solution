@@ -1,6 +1,7 @@
 class Solution {
 public:
     int dp[51][51][51];
+    // r1+c1=r2+c2 will always hold so we can reduce 4 state to 3 state..
     int helper(int r1,int c1,int r2,int c2,vector<vector<int>> &grid)
     {
         // nagetive basecase
