@@ -18,11 +18,8 @@ public:
         string ans;
         while(i--)
         {
-            auto top1=pq.top();
-            pq.pop();
-            auto top2=pq.top();
-            pq.pop();
-            
+            auto top1=pq.top(); pq.pop();
+            auto top2=pq.top(); pq.pop();
             if(ans.back()==top1.second){
                 top2.first--;
                 ans.push_back(top2.second);
