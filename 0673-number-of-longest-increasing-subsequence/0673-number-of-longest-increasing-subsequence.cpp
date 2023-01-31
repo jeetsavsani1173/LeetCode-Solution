@@ -23,10 +23,6 @@ public:
             }
             if(freq[i]==0) freq[i]=1;
         }
-        // for(auto it:dp) cout<<it<<" ";
-        // cout<<endl;
-        // for(auto it:freq) cout<<it<<" ";
-        // cout<<endl;
         int mxLen=0;
         for(int i=0;i<n;i++)
             mxLen=max(mxLen,dp[i]);
