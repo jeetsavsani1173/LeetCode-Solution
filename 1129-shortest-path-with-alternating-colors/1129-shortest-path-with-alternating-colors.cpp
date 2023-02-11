@@ -27,11 +27,6 @@ public:
                     q.push({it.first,cost+1,it.second});
                     it.first=-1;
                 }
-                // if(color!=it.second)
-                // {
-                //     q.push({it.first,cost+1,it.second});
-                //     vis[it.first]=true;
-                // }
             }
         }
             
