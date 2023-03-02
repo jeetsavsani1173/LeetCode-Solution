@@ -33,14 +33,6 @@ public:
                 graph[cell].push_back(vect[cell+move]);
             }
         }
-        // for(int i=1;i<vect.size();i++)
-        // {
-        //     cout<<i<<"-> ";
-        //     for(auto it:graph[i]){
-        //         cout<<it<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         // Apply BFS 
         vector<int> vis(n*n+1,-1);
         queue<pair<int,int>> q;
@@ -58,8 +50,6 @@ public:
                 }
             }
         }
-        // for(auto it:vis)
-        //     cout<<it<<" ";
         return vis[n*n];
     }
 };
