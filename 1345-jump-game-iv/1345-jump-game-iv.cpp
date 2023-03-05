@@ -18,18 +18,6 @@ public:
                 int index=q.front();
                 q.pop();
                 if(index==(n-1)) return level;
-                // if((index+1)<n){
-                //     if(!vis[index+1]) {
-                //         vis[index+1]=true;
-                //         q.push(index+1);
-                //     }
-                // }
-                // if((index-1)>=0){
-                //     if(!vis[index-1]) {
-                //         vis[index-1]=true;
-                //         q.push(index-1);
-                //     }
-                // }
                 vector<int> &temp=mp[arr[index]];
                 temp.push_back(index-1);
                 temp.push_back(index+1);
