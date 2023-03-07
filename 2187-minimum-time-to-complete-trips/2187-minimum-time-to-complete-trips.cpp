@@ -8,10 +8,8 @@ public:
         return temp_ans>=totalTrips;
     }
     long long minimumTime(vector<int>& time, int totalTrips) {
-        // if(time.size()==1) return totalTrips*time[0];
         long long l=1ll;
         long long r=1e14;
-        // cout<<l<<" "<<r<<endl;
         long long ans=r;
         while(l<=r){
             long long mid=(r-l)/2+l;
@@ -21,7 +19,6 @@ public:
             }else{
                 l=mid+1;
             }
-            // cout<<l<<" "<<r<<endl;
         }
         return ans;
     }
