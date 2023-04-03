@@ -48,8 +48,7 @@ class Solution
         
         if(l!=NULL && r!=NULL) return root;
         if(l!=NULL) return l;
-        if(r!=NULL) return r;
-        else return l;
+        else return r;
     }
     Node* lca(Node* root ,int n1 ,int n2 )
     {
