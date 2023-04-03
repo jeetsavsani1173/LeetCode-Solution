@@ -106,11 +106,8 @@ class Solution
         int l=sum(root->left);
         int r=sum(root->right);
         
-        if(!(root->left==NULL && root->right==NULL)){
+        if(!(root->left==NULL && root->right==NULL))
             if((l+r)!=(root->data)) return false;
-        }else{
-            return true;
-        }
             
         return helper(root->left) && helper(root->right);
     }
