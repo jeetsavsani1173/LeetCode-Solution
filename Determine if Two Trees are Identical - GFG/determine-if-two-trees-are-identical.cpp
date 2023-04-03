@@ -42,9 +42,7 @@ class Solution
     {
         if(node1==NULL && node2==NULL) return true;
         if(node1==NULL || node2==NULL) return false;
-        
         if(node1->data!=node2->data) return false;
-        
         return helper(node1->left,node2->left) && helper(node1->right,node2->right);
     }
     bool isIdentical(Node *r1, Node *r2)
