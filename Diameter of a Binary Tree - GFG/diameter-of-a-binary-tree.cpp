@@ -95,17 +95,30 @@ class Solution {
   public:
     int ans;
     // Function to return the diameter of a Binary Tree.
-    int helper(Node* node){
-        if(node==NULL) return 0;
-        int h1=helper(node->left);
-        int h2=helper(node->right);
-        ans=max(ans,h1+h2+1);
-        return 1+max(h1,h2);
+    // int helper(Node* node){
+    //     if(node==NULL) return 0;
+    //     int h1=helper(node->left);
+    //     int h2=helper(node->right);
+    //     ans=max(ans,h1+h2+1);
+    //     return 1+max(h1,h2);
+    // }
+    pair<int,int> helper(Node* root)
+    {
+        if(root==NULL) return {0,0};
+        pair<int,int> left=helper(root->left);
+        pair<int,int> right=helper(root->right);
+        
+        pair<int,int> rres;
+        rres.first=1+max(left.first,right.first);
+        rres.second=max(left.first+right.first,max(left.second,right.second));
+        return rres;
     }
     int diameter(Node* root) {
-        ans=0;
-        helper(root);
-        return ans;
+        // ans=0;
+        // helper(root);
+        // return ans;
+        pair<int,int> ans=helper(root);
+        return 1+ans.second;
     }
 };
 
