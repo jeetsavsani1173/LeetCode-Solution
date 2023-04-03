@@ -144,15 +144,7 @@ public:
         ans.push_back(root->data);
         if(root->left)
             addLeftB(root->left,ans);
-        // for(auto it:ans){
-        //     cout<<it<<" ";
-        // }
-        // cout<<endl;
         addLeaf(root,ans);
-        // for(auto it:ans){
-        //     cout<<it<<" ";
-        // }
-        // cout<<endl;
         vector<int> temp;
         if(root->right)
             addRightB(root->right,temp);
