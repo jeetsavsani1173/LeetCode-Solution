@@ -1,7 +1,6 @@
 # Left View of Binary Tree
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a Binary Tree, print Left view of it. Left view of a Binary Tree is set of nodes visible when tree is visited from Left side. The task is to complete the function <strong>leftView()</strong>, which accepts root of the tree as argument.</span></p>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a Binary Tree, return Left view of it. Left view of a Binary Tree is set of nodes visible when tree is visited from Left side. The task is to complete the function <strong>leftView()</strong>, which accepts root of the tree as argument.</span></p>
 
 <p><span style="font-size:18px">Left view of following tree is 1 2 4 8.</span></p>
 
@@ -26,7 +25,7 @@
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
 <pre><span style="font-size:18px"><strong>Input:
-</strong><img alt="" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190221103723/leftview.jpg" style="height:272px; width:285px" class="img-responsive">
+</strong><img alt="" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190221103723/leftview.jpg" style="height:272px; width:285px">
 <strong>Output: </strong>10 20 40
 </span></pre>
 
@@ -38,5 +37,4 @@ You just have to <strong>complete </strong>the function <strong>leftView() </str
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 0 &lt;= Number of nodes &lt;= 100<br>
 1 &lt;= Data of a node &lt;= 1000</span></p>
- <p></p>
-            </div>
+</div>
