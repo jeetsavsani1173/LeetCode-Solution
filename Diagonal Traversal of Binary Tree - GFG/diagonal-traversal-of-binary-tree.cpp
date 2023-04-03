@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX_HEIGHT 100000
@@ -110,6 +110,7 @@ int main() {
     return 0;
 }
 
+
 // } Driver Code Ends
 
 
@@ -124,18 +125,26 @@ struct Node
 vector<int> diagonal(Node *root)
 {
    vector<int> ans;
+   if(root==NULL) return ans;
    queue<Node*> q;
-   q.push(root);
+   Node* curr=root;
    
-   while(!q.empty())
-   {
-       Node* curr=q.front();
+   while(curr){
+       q.push(curr);
+       curr=curr->right;
+   }
+   
+   while(!q.empty()){
+       auto it=q.front();
        q.pop();
-       
-       while(curr){
-           if(curr->left) q.push(curr->left);
-           ans.push_back(curr->data);
-           curr=curr->right;
+       ans.push_back(it->data);
+       if(it->left) {
+           q.push(it->left);
+           curr=it->left->right;
+           while(curr){
+                q.push(curr);
+                curr=curr->right;
+           }
        }
    }
    return ans;
