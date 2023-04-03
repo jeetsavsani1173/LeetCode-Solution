@@ -93,15 +93,6 @@ struct Node
 
 class Solution {
   public:
-    int ans;
-    // Function to return the diameter of a Binary Tree.
-    // int helper(Node* node){
-    //     if(node==NULL) return 0;
-    //     int h1=helper(node->left);
-    //     int h2=helper(node->right);
-    //     ans=max(ans,h1+h2+1);
-    //     return 1+max(h1,h2);
-    // }
     pair<int,int> helper(Node* root)
     {
         if(root==NULL) return {0,0};
@@ -114,9 +105,6 @@ class Solution {
         return rres;
     }
     int diameter(Node* root) {
-        // ans=0;
-        // helper(root);
-        // return ans;
         pair<int,int> ans=helper(root);
         return 1+ans.second;
     }
