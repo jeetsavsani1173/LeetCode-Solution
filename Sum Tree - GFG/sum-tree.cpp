@@ -95,24 +95,29 @@ struct Node
 class Solution
 {
     public:
-    bool ans;
-    int helper(Node* root)
+    int sum(Node* node){
+        if(node==NULL) return 0;
+        return sum(node->left)+sum(node->right)+(node->data);
+    }
+    bool helper(Node* root)
     {
-        if(root==NULL) return 0;
+        if(root==NULL) return true;
         
-        int l=helper(root->left);
-        int r=helper(root->right);
+        int l=sum(root->left);
+        int r=sum(root->right);
         
-        if(!(root->left==NULL && root->right==NULL))
-            if((l+r)!=(root->data)) ans=false;
-        
-        return l+r+(root->data);
+        if(!(root->left==NULL && root->right==NULL)){
+            if((l+r)!=(root->data)) return false;
+        }else{
+            return true;
+        }
+            
+        return helper(root->left) && helper(root->right);
     }
     bool isSumTree(Node* root)
     {
-        ans=true;
-        helper(root);
-        return ans;
+        return helper(root);
+        // return ans;
     }
 };
 
