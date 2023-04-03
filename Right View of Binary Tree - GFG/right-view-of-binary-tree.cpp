@@ -48,8 +48,6 @@ class Solution
         q.push(root);
         while(!q.empty()){
             int len=q.size();
-            // ans.push_back(q.front()->data);
-            
             for(int i=0;i<len;i++){
                 Node* node=q.front();
                 q.pop();
