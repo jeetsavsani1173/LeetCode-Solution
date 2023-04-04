@@ -20,14 +20,12 @@ public:
                 if(curr->right) curr=curr->right;
                 else{
                     curr->right=new TreeNode(key);
-                    return root;
                     break;
                 }
             }else{
                 if(curr->left) curr=curr->left;
                 else{
                     curr->left=new TreeNode(key);
-                    return root;
                     break;
                 }
             }
