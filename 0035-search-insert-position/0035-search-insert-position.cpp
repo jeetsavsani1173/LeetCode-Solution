@@ -6,13 +6,9 @@ public:
         while(l<=r)
         {
             int mid=l+(r-l)/2;
-            
             if(nums[mid]==target)
-            {
                 return mid;
-            }
-            else if(nums[mid]<target)
-            {
+            else if(nums[mid]<target){
                 ans=mid;
                 l=mid+1;
             }
