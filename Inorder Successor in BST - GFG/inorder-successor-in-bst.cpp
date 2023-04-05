@@ -109,21 +109,20 @@ struct Node {
 
 class Solution{
   public:
-    Node* ans;
-    void dfs(Node* root,Node* x)
+    void dfs(Node* root,Node* x,Node* &ans)
     {
         if(root==NULL) return;
         if(root->data>x->data){
             ans=root;
-            dfs(root->left,x);
+            dfs(root->left,x,ans);
         }else{
-            dfs(root->right,x);
+            dfs(root->right,x,ans);
         }
     }
     Node * inOrderSuccessor(Node *root, Node *x)
     {
-        ans=NULL;
-        dfs(root,x);
+        Node* ans=NULL;
+        dfs(root,x,ans);
         return ans;
     }
 };
