@@ -20,14 +20,12 @@ public:
         if(root==NULL) return;
         dfs(root->left);
         // do all work here
-        if(prev){
-            if(prev->val>root->val){ // found wrong node.
-                if(start){
-                    end=root;
-                }else{
-                    start=prev;
-                    mid=root;
-                }
+        if(prev && prev->val>root->val){ // found wrong node.
+            if(start){
+                end=root;
+            }else{
+                start=prev;
+                mid=root;
             }
         } 
         prev=root;
