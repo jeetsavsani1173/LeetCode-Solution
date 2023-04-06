@@ -10,29 +10,20 @@
  */
 class Solution {
 public:
-    ListNode* first;
-    int count=0;
-    int find_size(ListNode* node)
+    ListNode* newHead=NULL;
+    void helper(ListNode* head)
     {
-        if(node==NULL) return 0;
-        return 1+find_size(node->next);
-    }
-    void helper(ListNode* last,int &sz)
-    {
-        if(last==NULL) return;
-        helper(last->next,sz);
-        
-        if(count<(sz/2)){
-            swap(first->val,last->val);
+        if(head==NULL) return;
+        if(head->next==NULL){
+            newHead=head;
+            return;
         }
-        count++;
-        first=first->next;
+        helper(head->next);
+        head->next->next=head;
+        head->next=NULL;
     }
     ListNode* reverseList(ListNode* head) {
-        int sz=find_size(head);
-        first=head;
-        count=0;
-        helper(head,sz);
-        return head;
+        helper(head);
+        return newHead;
     }
 };
