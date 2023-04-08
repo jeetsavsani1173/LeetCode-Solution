@@ -2,7 +2,7 @@
 
 select 
 ifnull(
-    (select distinct Salary from Employee
-    order by Salary desc
+    (select distinct salary from Employee
+    order by salary desc
     limit 1 offset 1), NULL)
 as SecondHighestSalary
