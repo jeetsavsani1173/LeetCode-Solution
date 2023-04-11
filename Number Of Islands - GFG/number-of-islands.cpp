@@ -6,9 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 // User function Template for C++
-class Solution {
-  public:
-  class Disjoint{
+class Disjoint{
         public:
         vector<int> par,size;
         Disjoint(int n){
@@ -37,6 +35,8 @@ class Solution {
             }
         }
     };
+class Solution {
+  public:
     bool isValid(int x,int y,int n,int m){
         return (x>=0 && y>=0 && x<n && y<m);
     }
