@@ -14,8 +14,6 @@ public:
                 maxSum=max(maxSum,sum);
             }
         }
-        
-        // maxSum=max(maxSum,sum);
         return maxSum;
     }
 };
