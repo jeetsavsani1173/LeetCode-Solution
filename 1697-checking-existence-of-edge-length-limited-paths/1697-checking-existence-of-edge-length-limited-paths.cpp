@@ -1,6 +1,5 @@
 class Solution {
 public:
-    // vector<vector<int>> graph[100005];
     class DisjointSet{
     vector<int> rank,parent,size;
     public:
@@ -54,11 +53,6 @@ public:
         return (a[2]<b[2]);
     }
     vector<bool> distanceLimitedPathsExist(int n, vector<vector<int>>& edgeList, vector<vector<int>>& queries) {
-        // Make a Graph..
-        // for(auto it:edgeList){
-        //     graph[it[0]].push_back({it[1],it[2]});
-        //     graph[it[1]].push_back({it[0],it[2]});
-        // }
         sort(edgeList.begin(),edgeList.end(),cmp);
         DisjointSet ds(n);
         vector<bool> ans(queries.size(),false);
