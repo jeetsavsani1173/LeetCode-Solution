@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Logic : Use concept of finding cycle in LL
     // use slow and fast pointer approach to find the cycle in LL.
     // if there is any duplicate then it will always create cycle that for sure..
     int findDuplicate(vector<int>& nums) {
