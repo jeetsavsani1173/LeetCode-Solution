@@ -10,19 +10,19 @@
  */
 class Solution {
 public:
-    ListNode* newHead=NULL;
-    void helper(ListNode* head)
-    {
-        if(head==NULL) return;
-        if(head->next==NULL){
-            newHead=head;
+    ListNode* newHead;
+    void helper(ListNode* node){
+        if(node==NULL) return;
+        if(node->next==NULL){
+            newHead=node;
             return;
         }
-        helper(head->next);
-        head->next->next=head;
-        head->next=NULL;
+        helper(node->next);
+        node->next->next=node;
+        node->next=NULL;
     }
     ListNode* reverseList(ListNode* head) {
+        newHead=NULL;
         helper(head);
         return newHead;
     }
