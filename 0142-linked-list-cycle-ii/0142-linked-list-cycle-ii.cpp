@@ -20,12 +20,11 @@ public:
         
         if(fast==NULL || fast->next==NULL) return NULL;
         
-        ListNode* curr1=head;
-        ListNode* curr2=slow;
-        while(curr1!=curr2){
-            curr1=curr1->next;
-            curr2=curr2->next;
+        fast=head;
+        while(slow!=fast){
+            slow=slow->next;
+            fast=fast->next;
         }
-        return curr1;
+        return slow;
     }
 };
