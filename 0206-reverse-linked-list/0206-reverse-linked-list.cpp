@@ -10,20 +10,17 @@
  */
 class Solution {
 public:
-    ListNode* newHead;
-    void helper(ListNode* node){
-        if(node==NULL) return;
-        if(node->next==NULL){
-            newHead=node;
-            return;
-        }
-        helper(node->next);
-        node->next->next=node;
-        node->next=NULL;
-    }
     ListNode* reverseList(ListNode* head) {
-        newHead=NULL;
-        helper(head);
-        return newHead;
+        ListNode* curr=head;
+        ListNode* prev=NULL;
+        
+        while(curr){
+            ListNode* temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
+        }
+        
+        return prev;
     }
 };
