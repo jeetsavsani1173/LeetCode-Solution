@@ -11,10 +11,9 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
-        ListNode* head;
         ListNode* tail;
         ListNode* dummy=new ListNode(-1);
-        head=tail=dummy;
+        tail=dummy;
         
         while(head1 && head2){
             if(head1->val>head2->val){
