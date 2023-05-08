@@ -10,11 +10,10 @@ public:
             
             if(nums[mid]<nums[r]){ // right part sorted..
                 r=mid-1;
-                ans=min(ans,nums[mid]);
-            }else{
+            }else{ // left part sorted
                 l=mid+1;
-                ans=min(ans,nums[mid]);
             }
+            ans=min(ans,nums[mid]);
         }
         return ans;
     }
