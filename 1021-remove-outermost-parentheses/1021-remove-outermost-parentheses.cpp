@@ -7,7 +7,7 @@ public:
         {
             if(it=='('){
                 count++;
-                if(count!=1) ans.push_back(it);
+                if(count>1) ans.push_back(it);
             }else{
                 count--;
                 if(count) ans.push_back(it);
