@@ -24,7 +24,7 @@ public:
     }
     int solve(int n, int k, vector<int> &stalls) {
         sort(stalls.begin(),stalls.end());
-        int l=0,r=1e9+5;
+        int l=0,r=*max_element(stalls.begin(),stalls.end());
         
         int ans=-1;
         
