@@ -1,29 +1,27 @@
 class Solution {
-public:
-    long cost_function(vector<int> &piles,int k)
-    {
-        long ans=0;
-        
-        for(int i=0;i<piles.size();i++)
-        {
-            ans+=ceil(1.0*piles[i]/k);
+public:// Logic  : Binary Search on Answer Space..
+    long check(vector<int> &piles,int k){
+        long total_hours=0;
+        for(auto it:piles){
+            if(it%k==0){
+                total_hours+=(1ll*it/k);
+            }else{
+                total_hours+=(1ll*it/k+1);
+            }
         }
-        return ans;
+        return total_hours;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        long long low=1,high=*max_element(piles.begin(),piles.end());
-        int ans=high;
-        while(low<=high)
-        {
-            long long mid=low+(high-low)/2;
-            
-            if(cost_function(piles,mid)<=h)
-            {
+        long  l=1,r=*max_element(piles.begin(),piles.end());
+        int ans=0;
+        while(l<=r){
+            long mid=(r-l)/2+l;
+            if(check(piles,mid)<=h){
                 ans=mid;
-                high=mid-1;
+                r=mid-1;
+            }else{
+                l=mid+1;
             }
-            else
-                low=mid+1;
         }
         return ans;
     }
