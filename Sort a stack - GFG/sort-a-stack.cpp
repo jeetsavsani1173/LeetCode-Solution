@@ -50,7 +50,7 @@ public:
 
 /* The below method sorts the stack s 
 you are required to complete the below method */
-void addAtRightPosition(stack<int> &st,int val,int prev)
+void insert(stack<int> &st,int val,int prev)
 {
     if(st.size()==0){
         if(val<=prev)
@@ -59,7 +59,7 @@ void addAtRightPosition(stack<int> &st,int val,int prev)
     }
     int currVal=st.top();
     st.pop();
-    addAtRightPosition(st,val,currVal);
+    insert(st,val,currVal);
     st.push(currVal);
     if(val<=prev && val>currVal)
         st.push(val);
@@ -69,7 +69,7 @@ void sortStack(stack<int> &stack){
     int val=stack.top();
     stack.pop();
     sortStack(stack);
-    addAtRightPosition(stack,val,1e9+5);
+    insert(stack,val,1e9+5);
 }
 void SortedStack :: sort()
 {
