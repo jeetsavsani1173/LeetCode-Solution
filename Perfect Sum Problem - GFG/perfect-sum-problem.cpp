@@ -9,20 +9,16 @@ class Solution{
 	int M=1e9+7;
 	long helper(int idx,int nums[],int n,int sum,vector<vector<long>> &dp)
     {
-        // if(sum==0) return 1;
         if(idx==n && sum==0) return 1;
         if(idx==n) return 0;
-        // if(sum<0) return 0;
         
         if(dp[idx][sum]!=-1) return dp[idx][sum];
         // Take
         long count=0;
-        // if(helper(idx+1,nums,n,sum-nums[idx],dp)>0)
         if(sum>=nums[idx])
             count+=helper(idx+1,nums,n,sum-nums[idx],dp);
         
         // Non_Take
-        // if(helper(idx+1,nums,n,sum,dp)>0) 
         count+=helper(idx+1,nums,n,sum,dp);
             
         return dp[idx][sum]=(count%M);
