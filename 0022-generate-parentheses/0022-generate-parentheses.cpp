@@ -34,7 +34,7 @@ public:
         helper(idx+1,s);
         
         // backTrack..
-        s[idx]='0';
+        // s[idx]='0';
     }
     vector<string> generateParenthesis(int n) {
         string s;
