@@ -10,9 +10,7 @@ public:
             dp[0][j]=(j>=zero)?(dp[0][j-zero]+dp[1][j-zero])%M:0;
             dp[1][j]=(j>=one)?(dp[0][j-one]+dp[1][j-one])%M:0;
         }
-        
         int ans=0;
-        
         for(int j=low;j<=high;j++){
             ans=(ans%M+dp[0][j]%M)%M;
             ans=(ans%M+dp[1][j]%M)%M;
