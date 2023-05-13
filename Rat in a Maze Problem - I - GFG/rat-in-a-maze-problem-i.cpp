@@ -21,8 +21,6 @@ class Solution{
             ans.push_back(curr);
             return;
         }
-        // if(vis[i][j]==true) return;
-        // vis[i][j]=true;
         
         for(int k=0;k<4;k++)
         {
@@ -36,8 +34,6 @@ class Solution{
                 vis[newX][newY]=false;
             }
         }
-        
-        // vis[i][j]=false;
     }
     vector<string> findPath(vector<vector<int>> &m, int n) {
         vector<string> ans;
