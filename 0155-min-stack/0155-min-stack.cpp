@@ -1,29 +1,27 @@
 class MinStack {
-public:
-    stack<int> st;
-    map<int,int> mp;
+public:// <ele,upto curr min>
+    stack<pair<int,int>> stk;
     MinStack() {
         
     }
     
     void push(int val) {
-        st.push(val);
-        mp[val]++;
+        if(stk.size()==0) stk.push({val,val});
+        else{
+            stk.push({val,min(val,stk.top().second)});
+        }
     }
     
     void pop() {
-        int val=st.top();
-        mp[val]--;
-        st.pop();
-        if(mp[val]==0) mp.erase(val);
+        stk.pop();
     }
     
     int top() {
-        return st.top();
+        return stk.top().first;
     }
     
     int getMin() {
-        return mp.begin()->first;
+        return stk.top().second;
     }
 };
 
