@@ -19,6 +19,7 @@ public:
                     q.push({i,j,0});
             }
         }
+        // if 0 rooten orange and >=1 fresh orange..
         if(q.size()==0 && cnt!=0) return -1;
         
         while(!q.empty()){
@@ -37,6 +38,7 @@ public:
                     q.push({newX,newY,dis+1});
             }
         }
+        // if any un-rotten orange the return -1..
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1 && vis[i][j]==-1) return -1;
