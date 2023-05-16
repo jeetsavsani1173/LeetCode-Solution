@@ -16,6 +16,7 @@ public:
             if(!st.empty() || curr!='0')
                 st.push(curr);
         }
+        // for corner case -> "1111"
         while(!st.empty() && k--)
             st.pop();
         if(st.size()==0)
