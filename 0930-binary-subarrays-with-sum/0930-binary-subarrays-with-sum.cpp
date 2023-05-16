@@ -1,16 +1,22 @@
 class Solution {
 public:
-    int numSubarraysWithSum(vector<int>& nums, int goal) {
+    // Exact (k) = atmost(k)- atmost(k-1)
+    int atMost(vector<int> &nums,int k){
         int ans=0;
+        int left=0;
         int sum=0;
-        map<int,int> mp;
-        mp[0]=1;
-        
-        for(auto it:nums){
-            sum+=it;
-            ans+=mp[sum-goal];
-            mp[sum]++;
+        for(int right=0;right<nums.size();right++){
+            sum+=nums[right];
+            
+            while(left<=right && sum>k){
+                sum-=nums[left];
+                left++;
+            }
+            ans+=(right-left+1);
         }
         return ans;
+    }
+    int numSubarraysWithSum(vector<int>& nums, int goal) {
+        return atMost(nums,goal)-atMost(nums,goal-1);
     }
 };
