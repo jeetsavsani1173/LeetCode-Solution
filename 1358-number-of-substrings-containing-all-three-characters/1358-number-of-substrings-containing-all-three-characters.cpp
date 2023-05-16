@@ -1,33 +1,29 @@
 class Solution {
-public:
-    int numberOfSubstrings(string s) {
-        map<char,int> mp;
+public:// try to break Rule
+    // Answer will be a = total subarray - (subarray which does't containes all element alteast one time..)
+    int findNotP(string s){
+        int left=0;
         int ans=0;
-        
-        int i=0;
-        int prev=-1;
-        int j=0;
-        for(;j<s.size();j++)
-        {
-            mp[s[j]]++;
-            if(mp.size()<3){
-                continue;
-            }
-            while(mp.size()==3)
-            {
-                mp[s[i]]--;
-                if(mp[s[i]]==0){
-                    mp[s[i]]++;
-                    break;
-                }else{
-                    i++;
-                }
-            }
+        int cntA=0,cntB=0,cntC=0;
+        for(int right=0;right<s.size();right++){
+            if(s[right]=='a') cntA++;
+            if(s[right]=='b') cntB++;
+            if(s[right]=='c') cntC++;
             
-            ans+=(i-prev)*(s.size()-j);
-            prev=i;
+            // break Rule -> make any one char count to zero
+            while(cntA!=0 && cntB!=0 && cntC!=0){
+                if(s[left]=='a') cntA--;
+                if(s[left]=='b') cntB--;
+                if(s[left]=='c') cntC--;
+                
+                left++;
+            }
+            ans+=(right-left+1);
         }
-        
         return ans;
+    }
+    int numberOfSubstrings(string s) {
+        int n=s.size();
+        return 1ll*n*(n+1)/2ll - findNotP(s);
     }
 };
