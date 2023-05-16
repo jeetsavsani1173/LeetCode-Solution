@@ -10,9 +10,6 @@ using namespace std;
 class Solution{
   public:
     int longestKSubstr(string s, int k) {
-        // map<char,int> temp;
-        // for(auto it:s) temp[it]++;
-        // if(temp.size()<k) return -1;
         int ans=-1;
         map<char,int> mp;
         int left=0;
