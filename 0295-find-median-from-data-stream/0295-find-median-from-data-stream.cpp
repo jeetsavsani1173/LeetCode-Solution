@@ -11,7 +11,7 @@ public:
         int mx_size=mx.size();
         int mn_size=mn.size();
         while(abs(mn_size-mx_size)>1){
-            if(mx.size()<mn.size()){
+            if(mn.size()>mx.size()){
                 mx.push(mn.top());
                 mn.pop();
                 mx_size++,mn_size--;
@@ -24,13 +24,10 @@ public:
     }
     
     void addNum(int num) {
-        if(mx.size()==0){
-            mx.push(num);
-        }else if(mn.size()==0){
+        if(mn.size()==0 || mx.size()==0){
             mx.push(num);
         }else{
             int top1=mx.top();
-            int top2=mn.top();
             
             if(num<=top1){
                 mx.push(num);
@@ -49,12 +46,11 @@ public:
             else
                 return (double)mn.top()*1.0;
         }
+        
         if(size%2==0){
-            // cout<<mx.top()<<" "<<mn.top()<<endl;
             double ans=mx.top()+mn.top();
             return ans/2.0;
         }else{
-            // cout<<mx.top()<<" "<<mn.top()<<endl;
             if(mx.size()<mn.size()){
                 return mn.top()*1.0;
             }else{
