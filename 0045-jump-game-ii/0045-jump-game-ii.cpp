@@ -7,7 +7,7 @@ public:
         for(int i=0;i<nums.size()-1;i++){
             farthest=max(farthest,i+nums[i]);
             
-            if(i==current){
+            if(i==current){ // if exshautd
                 current=farthest;
                 jumps++;
             }
