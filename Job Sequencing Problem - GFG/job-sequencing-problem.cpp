@@ -30,7 +30,6 @@ class Solution
         if(a.first==b.first) return a.second<b.second;
         return a.first>b.first;
     }
-    //Function to find the maximum profit and the number of jobs done.
     vector<int> JobScheduling(Job arr[], int n) 
     { 
         vector<pair<int,int>> vpr;
@@ -38,14 +37,10 @@ class Solution
             vpr.push_back({arr[i].profit,arr[i].dead});
         }
         sort(vpr.begin(),vpr.end(),comp);
-        // for(auto it:vpr){
-        //     cout<<it.first<<" "<<it.second<<endl;
-        // }
         int profit=0,jobs=0;
         int mxDead=0;
         for(auto it:vpr) mxDead=max(mxDead,it.second);
         vector<int> days(mxDead,-1);
-        // cout<<mxDead<<endl;
         for(int i=0;i<n;i++){
             int idx=vpr[i].second-1;
             while(idx>=0 && days[idx]!=-1) idx--;
