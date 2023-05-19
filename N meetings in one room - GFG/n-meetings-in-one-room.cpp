@@ -18,7 +18,7 @@ class Solution
         for(int i=0;i<n;i++) vpr.push_back({start[i],end[i]});
         sort(vpr.begin(),vpr.end(),comp);
         
-        int endTime=INT_MIN;
+        int endTime=0;
         int totalMeet=0;
         
         for(int i=0;i<n;i++){
