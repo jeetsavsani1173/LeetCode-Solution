@@ -1,20 +1,21 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        vector<vector<int>> ans;
         sort(intervals.begin(),intervals.end());
-        vector<int> tempInterval=intervals[0];
+        vector<vector<int>> ans;
+        vector<int> temp=intervals[0];
         
         for(auto it:intervals){
-            // in different interval
-            if(tempInterval[1]<it[0]){
-                ans.push_back(tempInterval);
-                tempInterval=it;
+            if(temp[1]<it[0]){
+                // start new interval
+                ans.push_back(temp);
+                temp=it;
             }else{
-                tempInterval[1]=max(tempInterval[1],it[1]);
+                // continue to the prev interval by update maximum of end
+                temp[1]=max(temp[1],it[1]);
             }
         }
-        ans.push_back(tempInterval);
+        ans.push_back(temp);
         return ans;
     }
 };
