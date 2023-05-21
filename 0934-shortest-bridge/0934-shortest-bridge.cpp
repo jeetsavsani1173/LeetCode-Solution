@@ -31,12 +31,8 @@ public:
             }
             if(flag) break;
         } 
-        // for(auto it:vis){
-        //     for(auto it1:it) {
-        //         cout<<it1<<" ";
-        //     }cout<<endl;
-        // }
         
+        // multi-source BFS
         queue<vector<int>> q;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
