@@ -124,7 +124,7 @@ public:
     
     void addRightB(Node* root,vector<int> &ans){
         if(root==NULL) return;
-        // if(root->left==NULL && root->right==NULL) return;
+        if(root->left==NULL && root->right==NULL) return;
         
         if(root->right) addRightB(root->right,ans);
         else addRightB(root->left,ans);
@@ -149,7 +149,7 @@ public:
         if(root->right)
             addRightB(root->right,temp);
         
-        for(int i=1;i<(temp.size());i++){
+        for(int i=0;i<(temp.size());i++){
             ans.push_back(temp[i]);
         }
         return ans;
