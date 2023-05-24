@@ -27,7 +27,7 @@ public:
             
             ans = max(ans, sum * p[i].first );
 
-            sum += pq.top();
+            sum += pq.top(); // we are removing the element because we have put with -'s' sign so...
             pq.pop();
         }
         
