@@ -97,18 +97,24 @@ int main() {
 
 
 // User function Template for C++
-int ans;
-void helper(Node* root,int target)
-{
-    if(root==NULL) return;
-    if(root->data>=target) ans=min(ans,root->data);
-    helper(root->left,target);
-    helper(root->right,target);
-}
 
 // Function to return the ceil of given number in BST.
-int findCeil(Node* root, int input) {
-    ans=INT_MAX;
-    helper(root,input);
-    return ans==INT_MAX?-1:ans;
+int ans;
+void find(Node* root,int target){
+    if(root==NULL) return;
+    
+    if(root->data>=target){
+        ans=min(ans,root->data);
+        find(root->left,target);
+    }else{
+        find(root->right,target);
+    }
 }
+int findCeil(Node* root, int input) {
+    if (root == NULL) return -1;
+    ans=INT_MAX;
+    find(root,input);
+    return ans==INT_MAX?(-1):ans;
+}
+
+
