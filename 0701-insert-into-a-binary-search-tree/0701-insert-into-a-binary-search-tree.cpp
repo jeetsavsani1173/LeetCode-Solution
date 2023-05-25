@@ -17,14 +17,16 @@ public:
         // find insert position it will be always leaf node..
         while(true){
             if(curr->val<key){
-                if(curr->right) curr=curr->right;
-                else{
+                if(curr->right){
+                    curr=curr->right;
+                }else{
                     curr->right=new TreeNode(key);
                     break;
                 }
             }else{
-                if(curr->left) curr=curr->left;
-                else{
+                if(curr->left){
+                    curr=curr->left;
+                }else{
                     curr->left=new TreeNode(key);
                     break;
                 }
