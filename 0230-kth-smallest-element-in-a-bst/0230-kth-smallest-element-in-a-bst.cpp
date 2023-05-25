@@ -16,10 +16,8 @@ public:
     {
         if(root==NULL) return;
         if(root->left) dfs(root->left,k,count);
-        
         count++;
         if(count==k) ans=root->val;
-        
         if(root->right) dfs(root->right,k,count);
     }
     int kthSmallest(TreeNode* root, int k) {
