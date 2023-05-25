@@ -22,6 +22,7 @@ struct Node {
 class Solution
 {
     public:
+    //Function to check whether a Binary Tree is BST or not.
     bool helper(Node *root,long mn,long mx)
     {
         if(!root)
