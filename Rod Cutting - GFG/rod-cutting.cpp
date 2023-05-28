@@ -10,7 +10,6 @@ using namespace std;
 
 class Solution{
   public:
-    
     int cutRod(int price[], int n) {
         vector<int> dp(n+2,0);
         
