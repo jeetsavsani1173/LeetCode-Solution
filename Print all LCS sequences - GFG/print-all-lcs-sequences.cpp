@@ -6,23 +6,6 @@ using namespace std;
 class Solution
 {
 	public:
-	    unordered_set<string> st;
-	    void helper(int i,int j,string &s,string &t,string &temp,vector<vector<int>> &dp){
-	        if(i==0 || j==0){
-	            reverse(temp.begin(),temp.end());
-	            st.insert(temp);
-	            reverse(temp.begin(),temp.end());
-	            return;
-	        }
-	        if(s[i-1]==t[j-1]){
-	            temp.push_back(s[i-1]);
-	            helper(i-1,j-1,s,t,temp,dp);
-	            temp.pop_back();
-	        }else{
-	            if(dp[i][j]==dp[i][j-1]) helper(i,j-1,s,t,temp,dp);
-	            if(dp[i][j]==dp[i-1][j]) helper(i-1,j,s,t,temp,dp);
-	        }
-	    }
 	    void solve(int i,int j,string s,string t,string ans,int length,vector<string>&res,
         map<string,int>&mp){
             if(length==0){
