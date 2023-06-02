@@ -5,9 +5,9 @@ public:
         if(dp[idx][buy]!=-1) return dp[idx][buy];
         int profit=0;
         if(buy){
-            profit=max(-1*prices[idx]+helper(idx+1,0,prices,dp),helper(idx+1,1,prices,dp));
+            profit=max(helper(idx+1,0,prices,dp)-prices[idx],helper(idx+1,1,prices,dp));
         }else{
-            profit=max(prices[idx]+helper(idx+1,1,prices,dp),helper(idx+1,0,prices,dp));
+            profit=max(helper(idx+1,1,prices,dp)+prices[idx],helper(idx+1,0,prices,dp));
         }
         return dp[idx][buy]=profit;
     }
