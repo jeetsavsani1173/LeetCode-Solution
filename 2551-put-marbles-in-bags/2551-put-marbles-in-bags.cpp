@@ -17,9 +17,6 @@ public:
         for(int i=addjSum.size()-1;i>=0 && k--;i--){
             mxSum+=addjSum[i];
         }
-        // for(auto it:addjSum) cout<<it<<" ";
-        // cout<<endl;
-        // cout<<mxSum<<" "<<mnSum<<endl;
         return (mxSum-mnSum);
     }
 };
