@@ -1,25 +1,22 @@
 class Solution {
 public:
-    bool ispalindrome(string &s,int start,int end)
+    bool isPAL(string &s,int start,int end)
     {
         while(start<=end)
             if(s[start++]!=s[end--]) return false;
         return true;
     }
-    void dfs(int index,string &s,vector<string> &path,vector<vector<string>> &ans)
+    void helper(int idx,string &s,vector<string> &currAns,vector<vector<string>> &ans)
     {
-        if(index==s.size())
-        {
-            ans.push_back(path);
+        if(idx==s.size()){
+            ans.push_back(currAns);
             return;
         }
-        
-        for(int i=index;i<s.size();i++){
-            if(ispalindrome(s,index,i))
-            {
-                path.push_back(s.substr(index,i-index+1));
-                dfs(i+1,s,path,ans);
-                path.pop_back();
+        for(int i=idx;i<s.size();i++){
+            if(isPAL(s,idx,i)){
+                currAns.push_back(s.substr(idx,i-idx+1));
+                helper(i+1,s,currAns,ans);
+                currAns.pop_back();
             }
         }
     }
@@ -27,9 +24,8 @@ public:
         vector<vector<string>> ans;
         if(s.size()==0) return ans;
         
-        vector<string> path;
-        dfs(0,s,path,ans);
-        
+        vector<string> currAns;
+        helper(0,s,currAns,ans);
         return ans;
     }
 };
