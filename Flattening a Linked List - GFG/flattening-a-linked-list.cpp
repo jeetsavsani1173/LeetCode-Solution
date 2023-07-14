@@ -109,9 +109,7 @@ struct Node{
 };
 */
 
-/*  Function which returns the  root of 
-    the flattened linked list. */
-    Node* mergeTwoLists(Node* a,Node* b){
+Node* mergeTwoLists(Node* a,Node* b){
         Node* dummy=new Node(-1);
         Node* curr=dummy;
         
