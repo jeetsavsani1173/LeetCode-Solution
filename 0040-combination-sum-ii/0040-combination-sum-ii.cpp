@@ -3,11 +3,8 @@ public:
     vector<vector<int>> ans;
     void combineSum(int idx,vector<int>& num,int target,vector<int> &temp_ans,map<int,int> &mp)
     {
-        if(idx==num.size())
-        {
-            if(target==0){
-                ans.push_back(temp_ans);
-            }
+        if(idx==num.size()){
+            if(target==0) ans.push_back(temp_ans);
             return;
         }
         // take then check howmany times 0 or 1 or 2 or 3 ....
