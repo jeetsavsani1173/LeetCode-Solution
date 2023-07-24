@@ -43,7 +43,7 @@ class Solution
     //Function to return list containing elements of right view of binary tree.
     vector<int> rightView(Node *root)
     {
-        vector<int> ans;
+       vector<int> ans;
         queue<Node*> q;
         q.push(root);
         while(!q.empty()){
