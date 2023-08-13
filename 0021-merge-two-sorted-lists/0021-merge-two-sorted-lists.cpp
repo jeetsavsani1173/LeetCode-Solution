@@ -10,33 +10,27 @@
  */
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
-        ListNode* tail;
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        ListNode* head1=list1;
+        ListNode* head2=list2;
         ListNode* dummy=new ListNode(-1);
-        tail=dummy;
+        ListNode* tail=dummy;
         
         while(head1 && head2){
-            if(head1->val>head2->val){
-                // take element from second Linkedlist
-                tail->next=head2;
-                tail=tail->next;
-                head2=head2->next;
-            }else{
-                // take from first LL.
+            if(head1->val<head2->val){
                 tail->next=head1;
-                tail=tail->next;
                 head1=head1->next;
+                tail=tail->next;
+                tail->next=NULL;
+            }else{
+                tail->next=head2;
+                head2=head2->next;
+                tail=tail->next;
+                tail->next=NULL;
             }
         }
-        
-        if(head1){
-            tail->next=head1;
-        }
-        
-        if(head2){
-            tail->next=head2;
-        }
-        
+        if(head1) tail->next=head1;
+        if(head2) tail->next=head2;
         return dummy->next;
     }
 };
