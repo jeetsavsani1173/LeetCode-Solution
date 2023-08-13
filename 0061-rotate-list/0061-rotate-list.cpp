@@ -38,7 +38,7 @@ public:
         dummy->next=head;
         ListNode* first_point=Find_pointer_after_k_nodes(head,len-k);
         ListNode* last_point=Find_pointer_after_k_nodes(head,len);
-        last_point->next=dummy->next;
+        last_point->next=head;
         dummy->next=first_point->next;
         first_point->next=NULL;
         
