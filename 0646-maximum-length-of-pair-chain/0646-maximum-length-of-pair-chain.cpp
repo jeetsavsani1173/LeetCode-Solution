@@ -1,31 +1,31 @@
 class Solution {
 public:
-    static bool comp(pair<int,int> &a,pair<int,int> &b)
-    {
-        if(a.second==b.second)
-            return (a.first<b.first);
-        return (a.second<b.second);
-    }
-    
-    int findLongestChain(vector<vector<int>>& pairs) {
-        int n=pairs.size();
-        vector<pair<int,int>> vpr;
-        for(int i=0;i<n;i++)
-            vpr.push_back({pairs[i][0],pairs[i][1]});
-        
-        sort(vpr.begin(),vpr.end(),comp);
-        
-        int limit=INT_MIN;
-        int cnt=0;
-        
-        for(int i=0;i<n;i++)
-        {
-            if(limit<vpr[i].first)
-            {
-                cnt++;
-                limit=vpr[i].second;
+    int helper(int idx,vector<vector<int>>& offers,vector<int> &dp){
+        if(idx==offers.size()) return 0;
+        if(dp[idx]!=-1) return dp[idx];
+        int low=idx+1,high=offers.size()-1;
+        int newIndex=offers.size();
+
+        while(low<=high){
+            int mid=(high-low)/2+low;
+
+            if(offers[idx][1]<offers[mid][0]){
+                high=mid-1;
+                newIndex=mid;
+            }else{
+                low=mid+1;
             }
         }
-        return cnt;
+
+        int take=1+helper(newIndex,offers,dp);
+        int nonTake=helper(idx+1,offers,dp);
+
+        return dp[idx]=max(take,nonTake);
+    }
+    int findLongestChain(vector<vector<int>>& pairs) {
+        int n=pairs.size();
+        sort(pairs.begin(),pairs.end());
+        vector<int> dp(n+1,-1);
+        return helper(0,pairs,dp);
     }
 };
