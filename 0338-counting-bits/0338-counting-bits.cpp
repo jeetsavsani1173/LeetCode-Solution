@@ -14,7 +14,7 @@ public:
         vector<int> ans;
         
         for(int i=0;i<=n;i++)
-            ans.push_back(__builtin_popcount(i));
+            ans.push_back(num_of_ones(i));
             
         return ans;
     }
