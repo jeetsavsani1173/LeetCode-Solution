@@ -19,13 +19,7 @@ public:
         
         int NodeCount=left.second+right.second;
         int sum=left.first+right.first;
-        // if(NodeCount==0) {
-        //     cout<<root->val;
-        //     ans++;
-        //     return {root->val,1};
-        // }
         if((sum+root->val)/(NodeCount+1)==root->val){
-            // cout<<root->val;
             ans++;
         }
         return {sum+root->val,NodeCount+1};
